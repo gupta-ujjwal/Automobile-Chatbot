@@ -1,0 +1,28 @@
+﻿1) Car Sales Leads -
+a) Hi, I’m Wraith. What’s your name?
+Name provided by the user for future use by chatbot.
+b) May I ask why you are thinking about buying a new car?
+Reason through which chatbot can give more interactive conversation 
+With the user.
+c) What segment of car you are interested in?
+Hatchback(1), Compact Sedan(2), Sedan(3), Mini-SUV(4), SUV(5), Luxury(6)
+d) Which fuel type vehicle would you prefer?
+Petrol(P), Diesel(D), Hybrid(H=P+D), Electric(E)
+e) Is there any particular brand you are looking for?
+Maruti Suzuki, Hyundai, Tata, Mahindra etc. provided with a
+drop down menu.
+f) Seating capacity of the car required?
+5-seater(), 7-seater(), 8-seater(), 9-seater()
+g) For what purpose you are looking to buy a car?
+Family use(a), Office visits(b), Outings(c), Off-roading(d)
+h) Is there any specific colour you are looking in for?
+Given certain random five colour option and input box to enter 
+Any different colour.
+i) What is the budget range for car you are looking in?
+A=1,50,000-4,00,000 ; B=4,00,000-10,50,000 ; C=10,50,000-25,00,000 ;
+D=25,00,000-80,00,000 ; E=80,00,000-Any
+j) For finance or trade-ins Please provide your number down here?
+Text box is provided for the input
+k) Valid contact details of finance companies are provided in the next pop-up.
+l) End up with a Thanks.
+

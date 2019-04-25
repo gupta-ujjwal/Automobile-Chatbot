@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Car Recomendation</title>
+  <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">  
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Roboto);
+    body {
+      background-image: url('assets/bg4.jpeg');
+      background-size: cover;
+    }
+
+    .title {
+      text-align: center;
+      position: absolute;
+      width: 100%;
+      font-size: 36px;
+      font-family: 'Roboto';
+      font-weight: 600;
+      z-index: -1;
+      color: #fff;
+      margin-top: 10px;
+    }
+
+    .buttons {
+      max-width: 92%;
+      width: 900px;
+      text-align: right;
+      margin: 20px auto 0;
+      padding-right: 3%;
+      margin-top: 10px;
+    }
+
+    button {
+      margin-top: 10px;
+      height: 36px;
+      width: 40px;
+      margin-left: 4px;
+      font-size: 24px;
+      color: orange;
+      text-align: center;
+      line-height: 1.4;
+      border-radius: 4px;
+      border: none;
+      outline: none;
+      background-color: white;
+      box-shadow: 0px 1px 2px #bbb;
+    }
+
+    button:hover {
+      cursor: pointer;
+      box-shadow: 0px 0px 3px #666;
+    }
+
+    button.on {
+      color: white;
+      background-color: #ccc;
+    }
+
+    .wrapper {
+      max-width: 92%;
+      width: 55vw;
+      margin: 30px auto 40px;
+      padding: 20px 20px 0;
+      background-color: #ddd;
+      font-family: Roboto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .item {
+      background-color: #fff;
+      overflow: hidden;
+      border-radius: 2px;
+      box-shadow: 0px 1px 3px #bbb;
+    }
+
+    img {
+      display: inline-block;
+      float: left;
+      max-height: 90%;
+      max-width: 90%;
+      padding: 1.2%;
+    }
+
+    a {
+      display: block;
+      transition: 0.2s;
+    }
+
+    a:hover {
+      opacity: 0.9;
+      cursor: pointer;
+    }
+
+    h2 {
+      transition: 0.2s;
+    }
+
+    h2:hover {
+      color: #666;
+      cursor: pointer;
+    }
+
+    span {
+      font-size: 24px;
+    }
+
+    span.price {
+      color: orange;
+    }
+
+    .list .item {
+      width: 100%;
+      margin: 0 auto 20px;
+      box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+    }
+    .list img {
+      max-width: 30%;
+    }
+    .list .details {
+      float: left;
+      max-width: 66%;
+      margin-top: 0.5%;
+      margin-left: 5%;
+    }
+
+    .grid .item {
+      width: 32%;
+      margin: 0 2% 20px 0;
+      float: left;
+      text-align: center;
+    }
+    .grid .item:nth-child(3n) {
+      margin-right: 0;
+    }
+    .grid img {
+      padding-top: 0;
+      max-width: 90%;
+      margin: 0 auto;
+      float: none;
+    }
+    .grid h2 {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+    .grid span {
+      display: inline-block;
+      margin-top: -6px;
+      font-size: 19px;
+    }
+    .grid .details {
+      float: none;
+      max-width: 90%;
+      margin: -20px auto 0;
+    }
+    .grid .details p {
+      margin-top: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="title">Recommended Cars</div>
+<div class="buttons">
+  <button class="list-view on"><i class="fa fa-bars"></i></button>
+  <button class="grid-view"><i class="fa fa-th"></i></button>
+</div>
+<div class="wrapper list">
+</div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  
+
+  <script>
+    howMany = 5;
+    listButton = $('button.list-view');
+    gridButton = $('button.grid-view');
+    wrapper = $('div.wrapper');
+
+
+    Names = ['Hyundai Creta','Ford Aspire','Ford Figo','Honda Jazz','Honda WR-V']
+    FuelType = ['Petrol','Diesel','Hybrid','Petrol','Diesel'];
+    PriceRange = ['4,00,000 - 6,00,000','10,00,000 - 12,00,000','4,00,000 - 6,00,000','6,00,000 - 8,00,000','4,00,000 - 6,00,000'];
+    Segment = ['Hatchback', 'Compact Sedan', 'SUV', 'Luxury', 'Compact Sedan'];
+    SeatingCapacity = ['7-seater','5-seater()', '8-seater', '7-seater', '8-seater'];
+    // Set up divs
+    for (i = 0; i < howMany; i++) { 
+      div = '<div class="item">'+
+            '<a href="javascript:void(0);">'+
+              '<img src="assets/'+Names[i]+'.PNG" />'+
+            '</a>'+
+            '<div class="details">'+
+              '<h2>'+Names[i]+'</h2>'+
+              '<ul>'+
+                '<li><b>Petrol :</b>'+FuelType[i]+'</li>'+
+                '<li><b>Price Range :</b>'+PriceRange[i]+'</li>'+
+                '<li><b>Segment : </b>'+Segment[i]+'</li>'+
+                '<li><b> Seating Capacity : </b>'+SeatingCapacity[i]+'</li>'
+              '</ul>'+
+            '</div>'+
+          '</div>';
+      $('.wrapper').append( div );  
+    }
+
+    listButton.on('click',function(){
+      
+      gridButton.removeClass('on');
+      listButton.addClass('on');
+      wrapper.removeClass('grid').addClass('list');
+      
+    });
+
+    gridButton.on('click',function(){
+      
+      listButton.removeClass('on');
+      gridButton.addClass('on');
+      wrapper.removeClass('list').addClass('grid');
+      
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Calibri' !important;
+    }
+
+    body {
+      background-image: url('assets/bg.jpg');
+      background-size: cover;
+    }
+
+    h1, p {
+      font-family: "Times New Roman", Times, serif;
+      text-align: center;
+      color: #f1f1f1;
+      font-size:  60px;
+    }
+
+
+    p {
+      font-size: 30px;
+    }
+
+    #output, #container {
+        display: flex;
+        justify-content: center;
+        margin-top: 18vh;
+    }
+
+    #container {
+      margin-top: 5vh;
+    }
+    input {
+        background-color: #eee;
+        border: none;
+        font-family: sans-serif;
+        color: #000;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 30px;
+    }
+
+    select {
+      width: 25vw;
+      height: 5vh;
+      font-size: 20px;
+      padding: 10px;
+      background: #fff;
+    }
+
+    button {
+      width: 7vw;
+      background: #328cf1;
+      padding: 0px;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      font-size: 20px;
+    }
+    button:hover {
+      box-shadow: 5px 5px 7px rgba(0,0,0,0.4)
+    }
+
+    .Title {
+      font-size: 80px;
+      text-align: center;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body style="padding-top:10vh;">
+  <div class="Title">Wraith</div>
+  <div class="Title" style="font-size:34px">The Automobile chatbot</div>
+  <div id="output"></div>
+      
+<div id="container" class="wrapper">
+    
+</div>
+
+<!-- jquery for enter key press -->      
+<script src="https://code.jquery.com/jquery-3.0.0.js" integrity="sha256-jrPLZ+8vDxt2FnE1zvZXCkCcebI/C8Dt5xyaQBjxQIo=" crossorigin="anonymous"></script>
+  
+
+    <script>
+      var questionNum = 0;						// keep count of question, used for IF condition.
+      var question = '<h1>Hi, I’m Wraith. What’s your name?</h1>';			  // first question
+
+      var output = document.getElementById('output');			// store id="output" in output variable
+      output.innerHTML = question;					// ouput first question
+      wrapper = $('div.wrapper');
+      wrapper.append('<input type="text" id="input" value="">')
+      var userInputs = {}
+      function bot() { 
+          if (document.getElementById("input")) {
+            var input = document.getElementById("input").value;  
+          }
+          if (questionNum == 0) {
+          output.innerHTML = '<h1>Hello ' + input + '!</h1>';// output response
+          userInputs['Name']=input;
+          document.getElementById("input").value = "";   		// clear text box
+          question = '<h1>How can i help you '+input+'?</h1>';	// load next question		
+          setTimeout(timedQuestion, 1500);				// output next question after 2sec delay
+          }
+          else if (questionNum == 1) {
+            output.innerHTML = '<h1>Yahh Sure!!!!!!</h1>';
+            setTimeout(1000);
+            document.getElementById("input").value = "";   		// clear text box
+            output.innerHTML = '<h1>Please Select a Car Segment that you are looking for.</h1>';
+            document.getElementById("input").remove();
+            wrapper.append('<form id="FORM"><select id="mySelect">'+
+              '<option value="0" selected="selected">Hacthback</option>'+
+              '<option value="1">Compact Sedan</option>'+
+              '<option value="2">SUV</option>'+
+              '<option value="3">Luxury</option>'+
+            '</select></form>');
+            wrapper.append('<button type="button" id="BUTTON" onclick="submit()">Submit</button>');
+          }
+          else if (questionNum == 2) {
+            output.innerHTML = '<h1>Which fuel type vehicle would you prefer?</h1>';
+            document.getElementById("FORM").remove();
+            document.getElementById("BUTTON").remove();
+            wrapper.append('<form id="FORM"><select id="mySelect">'+
+              '<option value="0" selected="selected">Petrol</option>'+
+              '<option value="1">Diesel</option>'+
+              '<option value="2">Hybrid(P+D)</option>'+
+              '<option value="3">Electric</option>'+
+            '</select></form>');
+            wrapper.append('<button type="button" id="BUTTON" onclick="submit()">Submit</button>');
+          }
+          else if (questionNum == 3) {
+            output.innerHTML = '<h1>Is there any particular brand you are looking for?</h1>';
+            document.getElementById("FORM").remove();
+            document.getElementById("BUTTON").remove();
+            wrapper.append('<form id="FORM"><select id="mySelect">'+
+              '<option value="0" selected="selected">Maruti</option>'+
+              '<option value="1">Hyundai</option>'+
+              '<option value="2">Tata</option>'+
+              '<option value="3">Volkswagen</option>'+
+              '<option value="4">Ford</option>'+
+              '<option value="5">Honda</option>'+
+              '<option value="6">Mahindra</option>'+
+              '<option value="7">Mercedes</option>'+
+              '<option value="8">BMW</option>'+
+              '<option value="9">Audi</option>'+
+              '<option value="10">Jaguar</option>'+              
+            '</select></form>');
+            wrapper.append('<button type="button" id="BUTTON" onclick="submit()">Submit</button>');
+          }
+          else if (questionNum == 4) {
+            output.innerHTML = '<h1>What is the seating capacity of the car required?</h1>';
+              document.getElementById("FORM").remove();
+            document.getElementById("BUTTON").remove();
+              wrapper.append('<form id="FORM"><select id="mySelect">'+
+              '<option value="0" selected="selected">5-seater</option>'+
+              '<option value="1">7-seater</option>'+
+              '<option value="2">8-seater</option>'+
+              '<option value="3">9-seater</option>'+             
+            '</select></form>');
+            wrapper.append('<button type="button" id="BUTTON" onclick="submit()">Submit</button>');
+          }
+          else if (questionNum == 5) {
+            output.innerHTML = '<h1>For what purpose are you looking to buy a car?</h1>';
+              document.getElementById("FORM").remove();
+            document.getElementById("BUTTON").remove();
+              wrapper.append('<form id="FORM"><select id="mySelect">'+
+              '<option value="0" selected="selected">Family use</option>'+
+              '<option value="1">Office visits</option>'+
+              '<option value="2">Outings</option>'+
+              '<option value="3">Outings</option>'+             
+              '<option value="4">Off-roading</option>'+             
+            '</select></form>');
+            wrapper.append('<button type="button" id="BUTTON" onclick="submit()">Submit</button>');
+          }
+          else if (questionNum == 6) {
+            output.innerHTML = '<h1>What is the budget range for car you are looking in?</h1>';
+              document.getElementById("FORM").remove();
+            document.getElementById("BUTTON").remove();
+              wrapper.append('<form id="FORM"><select id="mySelect">'+
+              '<option value="0" selected="selected">1,50,000-4,00,000</option>'+
+              '<option value="1">4,00,000-10,50,000</option>'+
+              '<option value="2">10,50,000-25,00,000</option>'+
+              '<option value="3">25,00,000-80,00,000</option>'+             
+              '<option value="4">80,00,000+</option>'+             
+            '</select></form>');
+            wrapper.append('<button type="button" id="BUTTON" onclick="submit()">Submit</button>');
+          }
+          else if (questionNum == 7) {
+            console.log(userInputs);
+            // window.open('RecommendationPage.html','_self')
+          }
+      }
+      i = 1
+      function submit() {
+        var e = document.getElementById("mySelect");
+        var strUser = e.options[e.selectedIndex].value;
+        userInputs[i++]=strUser;
+        bot();		// run bot function when enter key pressed
+        questionNum++;
+      }
+      function timedQuestion() {
+          output.innerHTML = question;
+      }
+
+      
+      //push enter key (using jquery), to run bot function.
+      $(document).keypress(function(e) {
+        if (e.which == 13) {
+          bot();		// run bot function when enter key pressed
+          questionNum++;	// increase questionNum count by 1
+        }
+      });
+      $(function() { // Shorthand for $(document).ready(function() {
+        $('select').change(function() {
+          alert($(this).val());
+        });
+      });
+    </script>
+</body>
+
+</html>
