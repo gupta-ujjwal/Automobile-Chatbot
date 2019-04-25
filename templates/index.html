@@ -11,7 +11,7 @@
     }
 
     body {
-      background-image: url('assets/bg.jpg');
+      background-image: url('static/bg.jpg');
       background-size: cover;
     }
 
@@ -137,25 +137,6 @@
             wrapper.append('<button type="button" id="BUTTON" onclick="submit()">Submit</button>');
           }
           else if (questionNum == 3) {
-            output.innerHTML = '<h1>Is there any particular brand you are looking for?</h1>';
-            document.getElementById("FORM").remove();
-            document.getElementById("BUTTON").remove();
-            wrapper.append('<form id="FORM"><select id="mySelect">'+
-              '<option value="0" selected="selected">Maruti</option>'+
-              '<option value="1">Hyundai</option>'+
-              '<option value="2">Tata</option>'+
-              '<option value="3">Volkswagen</option>'+
-              '<option value="4">Ford</option>'+
-              '<option value="5">Honda</option>'+
-              '<option value="6">Mahindra</option>'+
-              '<option value="7">Mercedes</option>'+
-              '<option value="8">BMW</option>'+
-              '<option value="9">Audi</option>'+
-              '<option value="10">Jaguar</option>'+              
-            '</select></form>');
-            wrapper.append('<button type="button" id="BUTTON" onclick="submit()">Submit</button>');
-          }
-          else if (questionNum == 4) {
             output.innerHTML = '<h1>What is the seating capacity of the car required?</h1>';
               document.getElementById("FORM").remove();
             document.getElementById("BUTTON").remove();
@@ -167,7 +148,7 @@
             '</select></form>');
             wrapper.append('<button type="button" id="BUTTON" onclick="submit()">Submit</button>');
           }
-          else if (questionNum == 5) {
+          else if (questionNum == 4) {
             output.innerHTML = '<h1>For what purpose are you looking to buy a car?</h1>';
               document.getElementById("FORM").remove();
             document.getElementById("BUTTON").remove();
@@ -180,7 +161,7 @@
             '</select></form>');
             wrapper.append('<button type="button" id="BUTTON" onclick="submit()">Submit</button>');
           }
-          else if (questionNum == 6) {
+          else if (questionNum == 5) {
             output.innerHTML = '<h1>What is the budget range for car you are looking in?</h1>';
               document.getElementById("FORM").remove();
             document.getElementById("BUTTON").remove();
@@ -193,18 +174,20 @@
             '</select></form>');
             wrapper.append('<button type="button" id="BUTTON" onclick="submit()">Submit</button>');
           }
-          else if (questionNum == 7) {
-            // console.log(userInputs);
+          else if (questionNum == 6) {
+            console.log(userInputs);
             $.ajax({
-                type: 'POST',
-                url: "http://127.0.0.1:5000/res",
-                data: JSON.stringify(userInputs),
-                dataType: 'json'
-            }).done(function(msg) {
-                alert("Data Saved: " + msg);
+              type: "POST",
+              url: "http://127.0.0.1:5000/receiver",
+              data: JSON.stringify(userInputs),
+              dataType: 'json'
+            }).done(function(data) {
+              console.log(data);
             });
-            console.log('ASD')
-            // window.open('RecommendationPage.html','_self')
+            setTimeout(function() {
+              window.open('/results')
+            }
+            ,2000);
           }
       }
       i = 0

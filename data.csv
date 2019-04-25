@@ -1,0 +1,90 @@
+0,1,2,3,4,Name
+1,P,5,a,A,Maruti Suzuki Alto800
+1,P,5,a,A,Hyundai EON
+1,P,5,a,A,Maruti Suzuki Wagon-R
+1,P,5,a,A,Hyundai Grand i10
+1,D,5,a,A,Hyundai Grand i10
+1,P,5,a,A,Hyundai Santro
+1,P,5,a,A,Tata Tiago
+1,D,5,a,A,Tata Tiago
+2,P,5,a,A,Tata Tigor
+2,D,5,a,B,Tata Tigor
+1,P,5,a,A,Maruti Suzuki Celerio
+1,P,5,b,A,Volkswagen Polo
+1,D,5,b,B,Volkswagen Polo
+1,P,5,b,B,Maruti Suzuki Baleno
+1,D,5,b,B,Maruti Suzuki Baleno
+1,P,5,b,B,Hyundai i20
+1,D,5,b,B,Hyundai i20
+1,D,5,c,B,Hyundai i20 Active
+1,P,5,b,B,Maruti Suzuki Swift
+1,D,5,b,B,Maruti Suzuki Swift
+1,P,5,b,B,Ford Figo
+1,D,5,b,B,Ford Figo
+1,P,5,b,B,Honda Jazz
+1,D,5,b,B,Honda Jazz
+2,P,5,c,B,Maruti Suzuki Swift Dzire
+2,D,5,c,B,Maruti Suzuki Swift Dzire
+2,P,5,c,B,Honda Amaze
+2,D,5,c,B,Honda Amaze
+2,P,5,c,B,Hyundai Xcent
+2,D,5,c,B,Hyundai Xcent
+2,P,5,c,B,Ford Aspire
+2,D,5,c,B,Ford Aspire
+3,P,5,a,B,Maruti Suzuki Ciaz
+3,D,5,c,B,Maruti Suzuki Ciaz
+3,P,5,b,B,Hyundai Verna
+3,D,5,c,C,Hyundai Verna
+3,P,5,b,B,Honda City
+3,D,5,c,C,Honda City
+4,D,5,c,C,Maruti Suzuki Vitara Brezza
+4,D,5,c,C,Honda WR-V
+4,P,5,b,C,Hyundai Creta
+4,D,5,c,C,Hyundai Creta
+4,P,5,c,B,Tata Nexon
+4,D,5,d,C,Tata Nexon
+5,D,5,d,C,Mahindra Thar
+4,D,5,d,C,Mahindra Tuv300
+5,D,5,d,C,Tata Harrier
+5,D,8,c,C,Tata Hexa
+5,D,8,d,C,Mahindra XUV500
+5,D,5,c,C,Honda CR-V
+5,D,9,d,C,Mahindra Bolero
+3,P,5,b,C,Honda Accord
+3,D,5,b,C,Honda Accord
+3,D,5,b,C,Hyundai Sonata
+3,D,5,b,C,Volkswagen Passat
+1,P,5,a,D,Mercedes Benz A class
+1,D,5,a,D,Mercedes Benz A class
+4,P,7,a,D,Mercedes Benz B class
+4,D,7,a,D,Mercedes Benz B class
+2,P,5,a,D,Mercedes Benz C class
+2,D,5,a,D,Mercedes Benz C class
+3,P,5,a,D,Mercedes Benz E class
+3,D,5,a,D,Mercedes Benz E class
+6,P,5,a,E,Mercedes Benz S class
+6,D,5,a,E,Mercedes Benz S class
+6,P,2,c,E,Mercedes Benz GTS
+1,P,5,a,E,Mercedes Benz G Wagon
+2,P,5,b,D,BMW 3 series
+2,D,5,b,D,BMW 3 series
+6,P,5,c,D,BMW M4
+3,P,5,b,D,BMW 5 series
+3,D,5,b,D,BMW 5 series
+3,P,5,c,E,BMW M5
+3,P,5,b,E,BMW 7 series
+3,D,5,c,E,BMW 7 series
+4,D,5,a,D,BMW X1
+4,D,5,c,D,BMW X3
+5,D,5,d,E,BMW X5
+4,D,5,a,C,Audi Q3
+2,P,5,a,D,Audi A4
+2,D,5,a,D,Audi A4
+3,P,5,b,D,Audi A6
+3,D,5,c,E,Audi A6
+4,D,5,d,D,Audi Q5
+5,D,5,d,E,Audi Q7
+2,D,5,b,D,Jaguar XE
+3,D,5,c,D,Jaguar XF
+3,P,5,b,E,Jaguar XJ
+4,D,5,d,D,Jaguar F-Pace

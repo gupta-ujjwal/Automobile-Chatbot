@@ -8,7 +8,7 @@
   <style>
     @import url(https://fonts.googleapis.com/css?family=Roboto);
     body {
-      background-image: url('assets/bg4.jpeg');
+      background-image: url('static/bg.jpg');
       background-size: cover;
     }
 
@@ -163,9 +163,8 @@
 </head>
 
 <body>
-
   <div class="title">Recommended Cars</div>
-<div class="buttons">
+  <div class="buttons">
   <button class="list-view on"><i class="fa fa-bars"></i></button>
   <button class="grid-view"><i class="fa fa-th"></i></button>
 </div>
@@ -182,16 +181,52 @@
     wrapper = $('div.wrapper');
 
 
-    Names = ['Hyundai Creta','Ford Aspire','Ford Figo','Honda Jazz','Honda WR-V']
-    FuelType = ['Petrol','Diesel','Hybrid','Petrol','Diesel'];
-    PriceRange = ['4,00,000 - 6,00,000','10,00,000 - 12,00,000','4,00,000 - 6,00,000','6,00,000 - 8,00,000','4,00,000 - 6,00,000'];
-    Segment = ['Hatchback', 'Compact Sedan', 'SUV', 'Luxury', 'Compact Sedan'];
-    SeatingCapacity = ['7-seater','5-seater()', '8-seater', '7-seater', '8-seater'];
+    // Names = ['Hyundai Creta','Ford Aspire','Ford Figo','Honda Jazz','Honda WR-V']
+    // FuelType = ['Petrol','Diesel','Hybrid','Petrol','Diesel'];
+    // PriceRange = ['4,00,000 - 6,00,000','10,00,000 - 12,00,000','4,00,000 - 6,00,000','6,00,000 - 8,00,000','4,00,000 - 6,00,000'];
+    // Segment = ['Hatchback', 'Compact Sedan', 'SUV', 'Luxury', 'Compact Sedan'];
+    // SeatingCapacity = ['7-seater','5-seater()', '8-seater', '7-seater', '8-seater'];
+    FuelTypeDict = {
+      'P':'Petrol',
+      'D':'Diesel'
+    }
+    PriceRangeDict = {
+      'A':'1,50,000-4,00,000',
+      'B':'4,00,000-10,50,000',
+      'C':'10,50,000-25,00,000',
+      'D':'25,00,000-80,00,000',
+      'E':'80,00,000+'
+    }
+    SegmentDict = {
+      '1':'Hatchback',
+      '2':'Compact Sedan',
+      '3':'Sedan',
+      '4':'Mini-SUV',
+      '5':'SUV', 
+      '6':'Luxury'
+    }
+    SeatingCapacityDict = {
+      '5':'5-Seater',
+      '7':'7-Seater'
+    }
+    Names = []
+    FuelType = [];
+    PriceRange = [];
+    Segment = [];
+    SeatingCapacity = [];
+    for (i = 0; i< howMany; i++) {
+      Names.push('{{data[i][5]}}');
+      FuelType.push(FuelTypeDict['{{data[i][1]}}']);
+      PriceRange.push(PriceRangeDict['{{data[i][4]}}']);
+      Segment.push(SegmentDict['{{data[i][0]}}']);
+      SeatingCapacity.push(SeatingCapacityDict['{{data[i][2]}}']);
+    }
+    console.log(FuelTypeDict['{{data[0][1]}}']);
     // Set up divs
     for (i = 0; i < howMany; i++) { 
       div = '<div class="item">'+
             '<a href="javascript:void(0);">'+
-              '<img src="assets/'+Names[i]+'.PNG" />'+
+              '<img src="static/cars/'+Names[i]+'.PNG" />'+
             '</a>'+
             '<div class="details">'+
               '<h2>'+Names[i]+'</h2>'+
