@@ -42,11 +42,9 @@
       color: orange;
       text-align: center;
       line-height: 1.4;
-      border-radius: 4px;
-      border: none;
       outline: none;
-      background-color: white;
-      box-shadow: 0px 1px 2px #bbb;
+      background-color: #141733;
+      border:0px;
     }
 
     button:hover {
@@ -56,7 +54,7 @@
 
     button.on {
       color: white;
-      background-color: #ccc;
+      background-color: #141733;
     }
 
     .wrapper {
@@ -166,8 +164,7 @@
   <div class="title">Recommended Cars</div>
   <div class="buttons">
   <button class="list-view on"><i class="fa fa-bars"></i></button>
-  <button class="grid-view"><i class="fa fa-th"></i></button>
-</div>
+    </div>
 <div class="wrapper list">
 </div>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
@@ -214,14 +211,36 @@
     PriceRange = [];
     Segment = [];
     SeatingCapacity = [];
-    for (i = 0; i< howMany; i++) {
-      Names.push('{{data[i][5]}}');
-      FuelType.push(FuelTypeDict['{{data[i][1]}}']);
-      PriceRange.push(PriceRangeDict['{{data[i][4]}}']);
-      Segment.push(SegmentDict['{{data[i][0]}}']);
-      SeatingCapacity.push(SeatingCapacityDict['{{data[i][2]}}']);
-    }
-    console.log(FuelTypeDict['{{data[0][1]}}']);
+    Names.push('{{data[0][5]}}');
+    FuelType.push(FuelTypeDict['{{data[0][1]}}']);
+    PriceRange.push(PriceRangeDict['{{data[0][4]}}']);
+    Segment.push(SegmentDict['{{data[0][0]}}']);
+    SeatingCapacity.push(SeatingCapacityDict['{{data[0][2]}}']);
+    
+    Names.push('{{data[1][5]}}');
+    FuelType.push(FuelTypeDict['{{data[1][1]}}']);
+    PriceRange.push(PriceRangeDict['{{data[1][4]}}']);
+    Segment.push(SegmentDict['{{data[1][0]}}']);
+    SeatingCapacity.push(SeatingCapacityDict['{{data[1][2]}}']);
+    
+    Names.push('{{data[2][5]}}');
+    FuelType.push(FuelTypeDict['{{data[2][1]}}']);
+    PriceRange.push(PriceRangeDict['{{data[2][4]}}']);
+    Segment.push(SegmentDict['{{data[2][0]}}']);
+    SeatingCapacity.push(SeatingCapacityDict['{{data[2][2]}}']);
+    
+    Names.push('{{data[3][5]}}');
+    FuelType.push(FuelTypeDict['{{data[3][1]}}']);
+    PriceRange.push(PriceRangeDict['{{data[3][4]}}']);
+    Segment.push(SegmentDict['{{data[3][0]}}']);
+    SeatingCapacity.push(SeatingCapacityDict['{{data[3][2]}}']);
+    
+    Names.push('{{data[4][5]}}');
+    FuelType.push(FuelTypeDict['{{data[4][1]}}']);
+    PriceRange.push(PriceRangeDict['{{data[4][4]}}']);
+    Segment.push(SegmentDict['{{data[4][0]}}']);
+    SeatingCapacity.push(SeatingCapacityDict['{{data[4][2]}}']);
+    
     // Set up divs
     for (i = 0; i < howMany; i++) { 
       div = '<div class="item">'+
